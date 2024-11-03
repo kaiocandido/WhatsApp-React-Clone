@@ -37,16 +37,20 @@ export const SidBar = styled.aside`
     .icon {
         color: #80868A;
         font-size: 20px;
-        margin: 0 15px;
+        margin-left: 15px;
+        margin-right: 15px;
         cursor: pointer;
     }
 
     .notificationContainer {
         width: 100%;
         height: 90px;
-        padding: 23px 0 0 80px;
+        padding-top: 23px;
+        padding-left: 80px;
         background-color: #9DE1FE;
         color: #384c56;
+        position: relative;
+        box-sizing: border-box;
     }
 
     .faBellSlash {
@@ -76,26 +80,35 @@ export const SidBar = styled.aside`
     .searchContacts {
         height: 50px;
         width: 100%;
-        padding: 7.5px 0 0 7.5px;
+        padding-left: 7.5px;
+        padding-top: 7.5px;
         background-color: #F8F8F8;
         position: relative;
         color: #BDC1C3;
+        box-sizing: border-box;
     }
 
     #search {
-        border: none;
-        height: 35px;    
-        width: 385px;
-        padding-left: 60px;
-        border-radius: 17.5px;
-        background-color: #FFF;
-    }
-
-    .faSearch {
         position: absolute;
         left: 30px;
         top: 18px;
         font-size: 14px;
+        background-color: #FFF;
+        border: none;
+        height: 35px;	
+        width: 300px;
+        border-radius: 17.5px;
+        text-align: center;
+        
+    }
+
+    .faSearch {
+        margin-left: 350px;
+        left: 30px;
+        top: 18px;
+        margin-top: 16px;
+        width: 20px;
+        height: 20px;
     }
 
     #search::placeholder {
@@ -103,15 +116,18 @@ export const SidBar = styled.aside`
     }
 
     .boxContacts {
+        height: auto;
         background-color: #FFF;
     }
 
     .contactBox {
         cursor: pointer;
+        margin-top: 10px;
         height: 72px;
         background-color: #FFF;
         border-top: 1px solid #f2f2f2;
         position: relative;
+        box-sizing: border-box;
     }
 
     .contactBox:last-child {
@@ -123,6 +139,10 @@ export const SidBar = styled.aside`
     }
 
     .activeChat {
+        background-color: #E9EBEB;
+    }
+
+    .activeChat:hover{
         background-color: #E9EBEB;
     }
 
@@ -179,11 +199,20 @@ export const Nav = styled.nav`
         line-height: 60px;
     }
 
+    .sabrinaOne{
+        width: 40px;
+        border-radius: 50%;
+        position: absolute;
+        left: 15px;
+        top: 10px;
+    }
+
     .sabrina {
         font-size: 16px;
         height: 60px;
         line-height: 60px;
     }
+
 
     .chattools-container {
         float: right;
@@ -247,17 +276,20 @@ export const Guest = styled.p`
     border-radius: 7px;
     position: relative;
     width: 200px;
+    background-color: #DCF8C6;
 
     &::before {
         content: "";
         width: 0; 
         height: 0; 
         border-bottom: 17px solid transparent; 
-        border-right: 17px solid #FFF; 
+        border-right: 17px solid #DCF8C6; 
         position: absolute;
         top: 0;
-        left: -10px;
+        left: 197px;
     }
+
+    
 `
 
 export const User = styled.p`
@@ -283,15 +315,28 @@ export const Send = styled.div`
     padding: 0 20px;
     position: relative;
 
+    #userinput{
+        width: 1350px;
+        height: 30px;
+        color: #BDC1C3;
+        border: none;
+        text-align: center;
+        border-radius: 17.5px;
+    }
+
     .faGrin {
         font-size: 24px;
         color: #80868A;
         cursor: pointer;
-        height: 60px;
-        line-height: 60px;
+        height: 20px;
+        line-height: 20px;
+        margin-right: 30px;
+        margin-top: 25px;
     }
 
     .faMicrophone {
-        float: right;
+        margin-left: 20px;
+        height: 20px;
+        width: 20px;
     }
 `

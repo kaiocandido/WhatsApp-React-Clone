@@ -53,7 +53,7 @@ export function Home() {
             <Main className="chatContainer">
                 <Nav>
                     <div className="contactInfoContainer">
-                        <img src={AvatarOne} alt="userPhoto" className="userPhoto" />
+                        <img src={AvatarTwo} alt="userPhoto" className="sabrinaOne" />
                         <p className="sabrina">Sabrina</p>
                     </div>
                     <ul className="chattools-container">
