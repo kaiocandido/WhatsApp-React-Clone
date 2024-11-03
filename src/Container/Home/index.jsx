@@ -1,28 +1,29 @@
 import { Chat, Container, Guest, Image, Main, Messagens, Nav, Send, SidBar, User } from "./styles"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight, faBellSlash, faCheckDouble, faCommentAlt, faGrin, faMicrophone, faPaperclip, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleRight, faBellSlash, faCheckDouble, faCommentAlt, faGrin, faMicrophone, faPaperclip, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import AvatarOne from '../../assets/avatar1.png'
 import AvatarTwo from '../../assets/avatar2.png'
 import AvatarThree from '../../assets/avatar3.png'
 import AvatarFour from '../../assets/avatar4.png'
+import { faEllipsisV } from "@fortawesome/free-solid-svg-icons/faEllipsisV"
 
-import { faEllipsisV } from "@fortawesome/free-solid-svg-icons/faEllipsisV";
 export function Home() {
     return (
         <Container>
             <SidBar>
-                <div className="tollbarContainer">
+                <div className="toolbarContainer">
                     <img src={AvatarOne} alt="Photo Profile" className="userPhoto" />
-                    <div className="AuxiconsToolBar">
-                        <FontAwesomeIcon icon={faSpinner} className="faSpinner" />
-                        <FontAwesomeIcon icon={faCommentAlt} className="faCommentAlt" />
-                        <FontAwesomeIcon icon={faEllipsisV} className="faEllipsisV" />
+                    <div className="auxIconsToolBar">
+                        <FontAwesomeIcon icon={faSpinner} className="icon" />
+                        <FontAwesomeIcon icon={faCommentAlt} className="icon" />
+                        <FontAwesomeIcon icon={faEllipsisV} className="icon" />
                     </div>
                 </div>
                 <div className="notificationContainer">
                     <FontAwesomeIcon icon={faBellSlash} className="faBellSlash" />
                     <p className="receiveNotification">Recebe notificações de novas mensagens</p>
-                    <p className="activetNotification">Ativar notificações
+                    <p className="activateNotification">
+                        Ativar notificações
                         <i><FontAwesomeIcon icon={faAngleRight} className="faAngleRight" /></i>
                     </p>
                 </div>
@@ -30,41 +31,23 @@ export function Home() {
                     <FontAwesomeIcon icon={faSearch} className="faSearch" />
                     <input type="text" placeholder="Buscar Contato" id="search" />
                 </div>
-                <div className="BoxContacts">
-                    <div className="contactBox activeChat">
-                        <img src={AvatarTwo} alt="Contact" className="userPhoto" />
-                        <div className="userInfo">
-                            <p className="userName">Sabrina</p>
-                            <p className="messageUser"><FontAwesomeIcon icon={faCheckDouble} className="faCheckDouble" />Olá, tudo bem?</p>
+                <div className="boxContacts">
+                    {[
+                        { avatar: AvatarTwo, name: 'Sabrina', message: 'Olá, tudo bem?', active: true },
+                        { avatar: AvatarThree, name: 'Matheus', message: 'Está estudando o que?', active: false },
+                        { avatar: AvatarFour, name: 'Leila', message: 'Vamos ir onde hoje?', active: false }
+                    ].map((contact, index) => (
+                        <div key={index} className={`contactBox ${contact.active ? 'activeChat' : ''}`}>
+                            <img src={contact.avatar} alt="Contact" className="userPhoto" />
+                            <div className="userInfo">
+                                <p className="userName">{contact.name}</p>
+                                <p className="messageUser">
+                                    {contact.active && <FontAwesomeIcon icon={faCheckDouble} className="faCheckDouble" />}
+                                    {contact.message}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="messageInfo">
-                        <p className="time">22:40</p>
-                    </div>
-
-                    <div className="contactBox">
-                        <img src={AvatarThree} alt="Contact" className="userPhoto" />
-                        <div className="userInfo">
-                            <p className="userName">Matheus</p>
-                            <p className="messageUser">Esta estudando oque?</p>
-                        </div>
-                    </div>
-                    <div className="messageInfo">
-                        <p className="time">20:20</p>
-                        <p className="pending">3</p>
-                    </div>
-
-                    <div className="contactBox">
-                        <img src={AvatarFour} alt="Contact" className="userPhoto" />
-                        <div className="userInfo">
-                            <p className="userName">Leila</p>
-                            <p className="messageUser">Vamos ir onde hoje?</p>
-                        </div>
-                    </div>
-                    <div className="messageInfo">
-                        <p className="time">11:00</p>
-                        <p className="pending">1</p>
-                    </div>
+                    ))}
                 </div>
             </SidBar>
             <Main className="chatContainer">
@@ -73,14 +56,14 @@ export function Home() {
                         <img src={AvatarOne} alt="userPhoto" className="userPhoto" />
                         <p className="sabrina">Sabrina</p>
                     </div>
-                    <ul>
+                    <ul className="chattools-container">
                         <li><FontAwesomeIcon icon={faSearch} className="faSearch" /></li>
                         <li><FontAwesomeIcon icon={faPaperclip} className="faPaperclip" /></li>
                         <li><FontAwesomeIcon icon={faEllipsisV} className="faEllipsisV" /></li>
                     </ul>
                 </Nav>
                 <Messagens>
-                    <Image></Image>
+                    <Image />
                     <Chat>
                         <Guest>Olá, bom dia!!</Guest>
                         <User>Bom dia! Tudo bem?</User>
@@ -92,7 +75,6 @@ export function Home() {
                     <FontAwesomeIcon icon={faMicrophone} className="faMicrophone" />
                 </Send>
             </Main>
-
         </Container>
     )
 }
