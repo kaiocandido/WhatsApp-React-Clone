@@ -28,7 +28,7 @@ Clone o repositório do GitHub para sua máquina local:
 
 ```bash
 git clone https://github.com/kaiocandido/WhatsApp-React-Clone
-<br>
+
 cd whatsapp-clone
-<br>
+
 npm install
