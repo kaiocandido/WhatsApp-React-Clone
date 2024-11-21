@@ -1,8 +1,34 @@
-# React + Vite
+# WhatsApp Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto de um **clone simples do WhatsApp**, desenvolvido com **React**, **HTML**, **CSS**, e hospedado na plataforma **Vercel**. O objetivo deste projeto é recriar a interface básica do WhatsApp e permitir algumas interações simples, como enviar mensagens entre usuários.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Interface de bate-papo semelhante ao WhatsApp.
+- Criação de salas de bate-papo.
+- Envio e exibição de mensagens (em tempo real, caso integrado com Firebase ou outro backend).
+- Layout semelhante ao WhatsApp com lista de contatos e janelas de conversa.
+<br>
+<a href="https://whats-app-react-clone.vercel.app/">Whatsapp Web</a>
+
+## Tecnologias Utilizadas
+
+- **HTML5**: Estrutura da página web.
+- **CSS3**: Estilização da página.
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Vercel**: Plataforma de implantação para front-end.
+
+## Como Rodar o Projeto Localmente
+
+Para rodar o projeto localmente, siga os seguintes passos:
+
+### 1. Clone o repositório
+
+Clone o repositório do GitHub para sua máquina local:
+
+```bash
+git clone https://github.com/kaiocandido/WhatsApp-React-Clone
+<br>
+cd whatsapp-clone
+<br>
+npm install
